@@ -1,38 +1,19 @@
-import React, { useState } from 'react';
-import PostModal from '../components/common/PostModal';
+// pages/home.tsx
+import Header from '../components/layout/Header';
+import Card from '../components/common/Card';
 
-interface Post {
-  title: string;
-  content: string;
-}
-
-export default function HomePage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [posts, setPosts] = useState<Post[]>([]);
-
-  const handleAddPost = (newPost: Post) => {
-    setPosts([...posts, newPost]);
-  };
-
+export default function Home() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Home Page</h1>
-      <button onClick={() => setIsModalOpen(true)}>Add New Post</button>
+    <>
+      <Header />
+      <main style={{ padding: '1rem' }}>
+        <h1>Home Page</h1>
 
-      {isModalOpen && (
-        <PostModal onClose={() => setIsModalOpen(false)} onSubmit={handleAddPost} />
-      )}
-
-      <div style={{ marginTop: '20px' }}>
-        {posts.length === 0 && <p>No posts yet.</p>}
-        {posts.map((post, index) => (
-          <div key={index} style={{ border: '1px solid #ddd', marginBottom: '10px', padding: '10px' }}>
-            <h3>{post.title}</h3>
-            <p>{post.content}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+        <Card title="Card One" content="This is the first card content." />
+        <Card title="Card Two" content="Second card with different content." />
+        <Card title="Card Three" content="Another card with more info." />
+      </main>
+    </>
   );
 }
 
