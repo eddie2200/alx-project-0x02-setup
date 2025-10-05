@@ -1,9 +1,8 @@
 # alx-project-0x02-setup
-# alx-project-0x02-setup
 # Next.js Project Setup and Basics.
 Mastering Project Autonomy: This project introduces setting up and using *Next.js, **TypeScript, and **Tailwind CSS* to build a modern web app with reusable components, routing, APIs, and a clean project structure.
 ## Project structure
-
+```
 alx-project-0x02/
 ├── components/
 │   ├── common/
@@ -34,3 +33,4 @@ alx-project-0x02/
 ├── package.json
 ├── README.md
 └── tsconfig.json
+```
